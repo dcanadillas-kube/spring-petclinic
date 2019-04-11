@@ -17,7 +17,7 @@ pipeline {
     stage('Docker Build') {
       steps {
         container('docker'){
-          error 'Fake error to force failure in Build'
+          //error 'Fake error to force failure in Build'
           sh 'docker build -t dcanadillas/spring-petclinic:latest .'
         }
       }
