@@ -6,7 +6,7 @@ pipelineConfig:
         agent:
           image: maven
         # replace: true
-        stage:
+        stages:
           - name: Test stage
             steps:
               - command: echo
