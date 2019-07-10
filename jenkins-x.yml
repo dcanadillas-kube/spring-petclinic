@@ -2,7 +2,15 @@ buildPack: none
 pipelineConfig:
   pipelines:
     release:
-      build:
+      pipeline:
+        agent:
+          image: maven
         # replace: true
-        steps:
-        - command: echo "hello David"
+        stage:
+          - name: Test stage
+          steps:
+            - command: echo
+            - args:
+              - "Hello David"
+            - command: mvn
+              - -version 
