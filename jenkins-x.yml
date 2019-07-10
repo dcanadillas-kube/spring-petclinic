@@ -8,9 +8,9 @@ pipelineConfig:
         # replace: true
         stage:
           - name: Test stage
-          steps:
-            - command: echo
-            - args:
-              - "Hello David"
-            - command: mvn
-              - -version 
+            steps:
+              - command: echo
+              - args:
+                - "Hello David"
+              - command: mvn
+                - -version 
