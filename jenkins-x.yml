@@ -1,1 +1,8 @@
-buildPack: maven
+buildPack: none
+pipelineConfig:
+  pipelines:
+    release:
+      build:
+        # replace: true
+        steps:
+        - command: echo "hello David"
