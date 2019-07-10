@@ -16,7 +16,7 @@ pipelineConfig:
                 args:
                   - clean
                   - install
-        - name: Kaniko Build
+          - name: Kaniko Build
             agent:
               image: gcr.io/kaniko-project/executor:latest
             environment:
