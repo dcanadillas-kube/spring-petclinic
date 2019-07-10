@@ -26,9 +26,6 @@ pipelineConfig:
                     name: kaniko-secret
                     key: kaniko-secret
             steps:
-              - command: echo
-                args:
-                  - "Kaniko build"
               - command: /kaniko/executor
                 args:
                   - "--dockerfile=Dockerfile"
