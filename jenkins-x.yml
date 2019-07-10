@@ -30,4 +30,4 @@ pipelineConfig:
                 args:
                   - "--dockerfile=Dockerfile"
                   - "--context=/workspace"
-                  - "--destination=$DOCKER_REGISTRY"
+                  - "--destination=eu.gcr.io/emea-sa-demo/petclinic-kaniko:latest"
