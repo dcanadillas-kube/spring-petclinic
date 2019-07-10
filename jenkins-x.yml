@@ -10,7 +10,8 @@ pipelineConfig:
           - name: Test stage
             steps:
               - command: echo
-              - args:
-                - "Hello David"
+                args:
+                  - "Hello David"
               - command: mvn
-                - -version 
+                args:
+                  - -version 
