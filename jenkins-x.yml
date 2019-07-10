@@ -3,15 +3,34 @@ pipelineConfig:
   pipelines:
     release:
       pipeline:
-        agent:
-          image: maven
         # replace: true
         stages:
-          - name: Test stage
+          - name: Maven Build
+            agent:
+              image: maven
             steps:
               - command: echo
                 args:
                   - "Hello David"
               - command: mvn
                 args:
-                  - -version 
+                  - clean
+                  - install
+        - name: Kaniko Build
+            agent:
+              image: gcr.io/kaniko-project/executor:latest
+            environment:
+              - name: GOOGLE_APPLICATION_CREDENTIALS
+                valueFrom:
+                  SecretKeyRef:
+                    name: kaniko-secret
+                    key: kaniko-secret
+            steps:
+              - command: echo
+                args:
+                  - "Kaniko build"
+              - command: /kaniko/executor
+                args:
+                  - "--dockerfile=Dockerfile"
+                  - "--context=/workspace"
+                  - "--destination=$DOCKER_REGISTRY"
