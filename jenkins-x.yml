@@ -22,7 +22,7 @@ pipelineConfig:
             environment:
               - name: GOOGLE_APPLICATION_CREDENTIALS
                 valueFrom:
-                  SecretKeyRef:
+                  secretKeyRef:
                     name: kaniko-secret
                     key: kaniko-secret
             steps:
