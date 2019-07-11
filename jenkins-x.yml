@@ -19,12 +19,12 @@ pipelineConfig:
           - name: Kaniko Build
             agent:
               image: gcr.io/kaniko-project/executor:latest
-            environment:
-              - name: GOOGLE_APPLICATION_CREDENTIALS
-                valueFrom:
-                  secretKeyRef:
-                    name: kaniko-secret
-                    key: kaniko-secret
+            # environment:
+            #   - name: GOOGLE_APPLICATION_CREDENTIALS
+            #     valueFrom:
+            #       secretKeyRef:
+            #         name: kaniko-secret
+            #         key: kaniko-secret
             steps:
               - command: /kaniko/executor
                 args:
