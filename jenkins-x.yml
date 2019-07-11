@@ -29,5 +29,5 @@ pipelineConfig:
               - command: /kaniko/executor
                 args:
                   - "--dockerfile=Dockerfile"
-                  - "--context=/workspace"
+                  - "--context=`pwd`"
                   - "--destination=eu.gcr.io/emea-sa-demo/petclinic-kaniko:latest"
